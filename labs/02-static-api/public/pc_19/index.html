@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Card Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <div class="cards-wrapper" id="cardsWrapper"></div>
+
+    <!-- Modal Form -->
+    <form class="form-container" id="formContainer" autocomplete="off">
+        <h2>New Call</h2>
+        <label>Image URL</label>
+        <input required type="url" id="imgUrlInput" placeholder="https://example.com/photo.jpg" />
+
+        <label>Full Name</label>
+        <input required type="text" id="fullNameInput" placeholder="Enter full name" />
+
+        <label>Home Town</label>
+        <input required type="text" id="homeTownInput" placeholder="Enter home town" />
+
+        <label>Purpose</label>
+        <input required type="text" id="purposeInput" placeholder="e.g., Quick appointment note" />
+
+        <label>Category</label>
+        <div class="radio-group">
+            <label class="tag-checkbox"><input required type="radio" name="category"
+                    value="Emergency" />Emergency</label>
+            <label class="tag-checkbox"><input required type="radio" name="category"
+                    value="Important" />Important</label>
+            <label class="tag-checkbox"><input required type="radio" name="category" value="Urgent" />Urgent</label>
+            <label class="tag-checkbox"><input required type="radio" name="category" value="No Rush" />No Rush</label>
+        </div>
+        <button type="submit" class="submit-btn">Create Note</button>
+        <button type="button" class="closeForm">Close</button>
+        <div class="form-warning" id="formWarning"></div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
