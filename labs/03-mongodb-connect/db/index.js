@@ -8,17 +8,19 @@ const connectDB = async () => {
   try {
     console.log(
       `\n\n\t\t\t****************~~~~~~~~~~Loading the Database URL~~~~~~~~~~**********\n\n\n`,
-      process.env.DATABASE_URL
+      process.env.MONGODB_URI
     );
     const connectionInstance = await mongoose.connect(
-      `${process.env.DATABASE_URL}/${DB_NAME}`
+      `${process.env.MONGODB_URI}/${DB_NAME}`
     );
     // console.log("DB Connected", connectionInstance);
     console.log(
       `\n\n\t\t\t****************~~~~~~~~~~Connected the Database URL~~~~~~~~~~**********\n\n\n`
     );
+    console.log(`Database: ${connectionInstance.connection.name}`);
+    console.log(`HOST(DEV/PROD/TEST): ${connectionInstance.connection.host}`);
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Connection Failed To MongoDB", error);
     process.exit(1);
   }
 };
