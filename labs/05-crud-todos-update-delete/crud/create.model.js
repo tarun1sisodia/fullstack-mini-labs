@@ -7,9 +7,17 @@ const todoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    password: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
+
+todoSchema.pre("save", async function (next) {
+  
+});
 
 // Create Todo Model
 export const Todo = mongoose.model("Todo", todoSchema);
