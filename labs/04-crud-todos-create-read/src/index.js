@@ -9,13 +9,12 @@ const PORT = process.env.PORT || 8000;
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`Running server on Local PORT`);
+      console.log(`Running server on Local ${PORT}`);
     });
     app.on("error", (error) => {
       console.log(`Error inside in app.on`);
     });
   })
-
   .catch((err) => {
     console.error(`MONGODB: ${err}`);
   });
