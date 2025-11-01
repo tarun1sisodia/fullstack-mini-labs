@@ -214,3 +214,11 @@ Pipfile.lock           # Python — optional
 #
 # Example: If Lab 16 generates CSVs:
 # /exports/
+
+*android/
+*windows/
+*linux/
+*ios/
+*web/
+*macos/
+*test/

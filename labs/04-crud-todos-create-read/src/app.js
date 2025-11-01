@@ -22,5 +22,7 @@ app.use(cookieParse());
 
 // routes declaration
 app.use("/api/v1/users", userRouter);
-
+app.get("/health", (req, res) => {
+  res.send("Server is Healthy");
+});
 export { app };
