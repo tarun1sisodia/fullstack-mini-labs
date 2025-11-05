@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
 import { app } from "./app.js";
+import { connectDB } from "./database/db.js";
 
-import { connectDB } from "./services/db.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Running server on ${PORT}`);
 });
-/* 
+
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
@@ -21,4 +21,3 @@ connectDB()
   .catch((err) => {
     console.error(`MONGODB: ${err}`);
   });
- */

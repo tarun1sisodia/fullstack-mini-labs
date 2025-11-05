@@ -12,7 +12,7 @@ const connectDB = async () => {
     console.log(`Host: ${connectionInstance.connection.host}`);
   } catch (error) {
     console.log(`Mongodb Connection err:${error}`);
-    process.exit(1);
+    process.exit(1); // this disconnect whole server or file
   }
 };
 
