@@ -1,5 +1,5 @@
 import express from "express";
-import cookieParse from "cookie-parser";
+import cookieParser from "cookie-parser";
 import cors from "cors";
 
 // routes import
@@ -18,11 +18,10 @@ app.use(
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ limit: "10kb", extended: true }));
-app.use(cookieParse());
-
+app.use(cookieParser());
 // routes declaration
 app.use("/api/v1/users", userRouter);
-app.get("/health", (req, res) => {
+app.get("/health", (_, res) => {
   res.send("Server is Healthy");
 });
 export { app };

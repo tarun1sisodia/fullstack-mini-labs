@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import { User } from "../models/user.model.js";
 import { asyncHandler } from "../services/asyncHandler.js";
-
 const registerUser = asyncHandler(async (req, res) => {
   // Getting data from frontend
   const { username, password } = req.body;
@@ -39,6 +38,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   return res
     .status(201)
+    .cookie("refreshToken", refreshToken, { httpOnly: true, secure: true })
     .json(
       new ApiResponse(
         "Created User Account in DB and Returning it successfully",

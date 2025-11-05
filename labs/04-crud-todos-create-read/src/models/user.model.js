@@ -6,6 +6,10 @@ const userSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, lowercase: true },
     password: { type: String, required: true },
+    refreshToken: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
