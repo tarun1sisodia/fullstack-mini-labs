@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon 01-hello-server/index.js"
+    "dev": "nodemon index.js"
   },
   "author": "Tarun Sisodia",
   "license": "MIT",
